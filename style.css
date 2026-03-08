@@ -93,6 +93,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 0.5rem;
 }
 
 header {
@@ -299,20 +300,32 @@ main {
 
 .rightbar-footer {
     padding-top: 40px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
-.rightbar-footer .footer-divider {
-    margin-left: 24px;
-    margin-right: 24px;
-    margin-block: 24px;
-    border: 0px;
-    border-block-start: 1px solid #292929;
-    -webkit-tap-highlight-color: transparent;
+.footer-area {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footer-links {
+    flex-wrap: wrap;
+    /* allows lists to wrap */
+    gap: 24px;
+    width: 100%;
 }
 
 .lists ul {
-    padding-inline-start: 0px;
-    margin-right: 40px;
+    padding-inline-start: 0;
+    margin-right: 0;
+    list-style: none;
+}
+
+.medias img {
+    width: 32px;
+    height: 32px;
 }
 
 #options {
@@ -439,16 +452,32 @@ main {
     }
 
     .rightbar-footer {
-        padding-top: 24px;
+        padding: 16px 12px 0 12px;
+    }
+
+    .footer-area {
+        flex-direction: column;
+        /* stack links above social icons */
+        gap: 24px;
+    }
+
+    .footer-links {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columns of lists */
+        gap: 20px;
+    }
+
+    .footer-socialMedia {
+        justify-content: flex-start;
+        gap: 12px;
     }
 
     .rightbar-footer .footer-divider {
-        margin-left: 16px;
-        margin-right: 16px;
-    }
-
-    .lists ul {
-        margin-right: 16px;
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+        box-sizing: border-box;
     }
 }
 
@@ -543,18 +572,27 @@ main {
         gap: 12px;
     }
 
-    .rightbar-footer {
-        padding-top: 16px;
+    .footer-links {
+        grid-template-columns: repeat(2, 1fr);
+        /* keep 2 cols, tighter */
+        gap: 16px;
     }
 
-    .rightbar-footer .footer-divider {
-        margin-left: 10px;
-        margin-right: 10px;
-        margin-block: 16px;
+    .lists ul a span {
+        font-size: 0.78rem;
     }
 
-    .lists ul {
-        margin-right: 10px;
+    .lists ul p {
+        font-size: 0.8rem;
+    }
+
+    .medias img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .copyright-sec {
+        font-size: 0.8rem;
     }
 
     .text {
@@ -583,5 +621,9 @@ main {
 
     .search-img {
         width: 17px;
+    }
+
+    .footer-links {
+        grid-template-columns: 1fr;
     }
 }
