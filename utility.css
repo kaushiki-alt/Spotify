@@ -247,3 +247,7 @@ li {
     background-color: #342b2b;
     -webkit-tap-highlight-color: transparent;
 }
+
+.hidden {
+    display: none;
+}

@@ -399,10 +399,6 @@ main {
         margin: 0px 10px;
     }
 
-    /* Compact search box */
-    .search-box {
-        height: 40px;
-    }
 
     .home,
     .search,
@@ -460,8 +456,36 @@ main {
     /* Hide non-essential nav text labels on very small screens */
 
     .search-box {
+        background: transparent !important;
+        border-radius: 0;
         height: 36px;
-        padding: 0 2px;
+        padding: 0;
+        width: auto;
+        min-width: unset;
+        max-width: unset;
+    }
+
+    .search-box input {
+        display: none;
+    }
+
+    .search {
+        background: transparent !important;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: background 0.2s ease;
+    }
+
+    .search-img {
+        width: 20px;
+    }
+
+    .search:hover {
+        background: #303030 !important;
     }
 
     .home,
@@ -522,10 +546,10 @@ main {
 
 /*  Very small phones (max 360px) ─ */
 @media (max-width: 360px) {
-    .options a {
-        font-size: 0.72rem;
-    }
 
+    .options-bar {
+        display: none;
+    }
     .home,
     .search,
     .playlist {
@@ -536,5 +560,9 @@ main {
 
     .left-bottom ul {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .search-img {
+        width: 17px;
     }
 }
