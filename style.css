@@ -101,6 +101,8 @@ header {
 
 main {
     margin-top: 1rem;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .side-nav {
@@ -366,6 +368,22 @@ main {
         margin: 6px;
     }
 
+    header {
+        flex-wrap: wrap;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    main {
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+
+    main>* {
+        min-width: 0;
+        max-width: 100%;
+    }
+
     /* Hide the sidebar */
     .leftbar {
         position: fixed;
@@ -550,6 +568,7 @@ main {
     .options-bar {
         display: none;
     }
+
     .home,
     .search,
     .playlist {
