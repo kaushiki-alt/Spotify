@@ -12,44 +12,52 @@
 <body>
     <header>
         <nav class="flex">
-            <div class="logo flex align-center">
-                <a href="/">
-                    <img src="Images/logo.svg" alt="logo">
-                </a>
-            </div>
-
-            <div class="home-search flex align-center">
-                <div>
-                    <button class="home background-lightGray" aria-label="home">
-                        <span aria-hidden="true" class="transparent-bg">
-                            <img src="Images/home.svg" aria-hidden="true" alt="home" class="home-img transparent-bg">
-                        </span>
-                    </button>
+            <div class="left-option-bar flex flex-col">
+                <div class="logo flex align-center">
+                    <a href="/">
+                        <img src="Images/logo.svg" alt="logo">
+                    </a>
                 </div>
-                <formf>
-                    <div class="search-box flex align-center background-lightGray">
-                        <div class="flex align-center transparent-bg">
-                            <button class="search background-lightGray" aria-label="search">
-                                <span aria-hidden="true" class="transparent-bg">
-                                    <img src="Images/search.svg" alt="search" class="search-img transparent-bg">
-                                </span>
-                            </button>
-                        </div>
-                        <div class="text transparent-bg flex align-center" style="width: 100%;">
-                            <!-- <input type="search" class="transparent-bg"> -->
-                            <span class="transparent-bg color-offwhite">What do you want to play? </span>
-                            <div class="browse transparent-bg flex">
-                                <button class="browse transparent-bg" aria-label="browse">
-                                    <img src="Images/Basket.svg" alt="browse" class="transparent-bg browse-img">
+
+                <div class="home-search flex align-center">
+                    <div>
+                        <button class="home background-lightGray" aria-label="home">
+                            <span aria-hidden="true" class="transparent-bg">
+                                <img src="Images/home.svg" aria-hidden="true" alt="home"
+                                    class="home-img transparent-bg">
+                            </span>
+                        </button>
+                    </div>
+                    <formf>
+                        <div class="search-box flex align-center background-lightGray">
+                            <div class="flex align-center transparent-bg">
+                                <button class="search background-lightGray" aria-label="search">
+                                    <span aria-hidden="true" class="transparent-bg">
+                                        <img src="Images/search.svg" alt="search" class="search-img transparent-bg">
+                                    </span>
                                 </button>
                             </div>
+                            <div class="text transparent-bg flex align-center" style="width: 100%;">
+                                <!-- <input type="search" class="transparent-bg"> -->
+                                <span class="transparent-bg color-offwhite">What do you want to play? </span>
+                                <div class="browse transparent-bg flex">
+                                    <button class="browse transparent-bg" aria-label="browse">
+                                        <img src="Images/Basket.svg" alt="browse" class="transparent-bg browse-img">
+                                    </button>
+                                </div>
+                            </div>
+                            </form>
                         </div>
-                        </form>
-                    </div>
+                </div>
             </div>
 
             <div class="options-bar transparent-bg">
-                <ul type="none" class=" options flex align-center justify-center">
+                <select name="options" id="options" class="">
+                    <option>Premium</option>
+                    <option>Support</option>
+                    <option>Download</option>
+                </select>
+                <ul type="none" class=" options flex align-center justify-center hide-mobile">
                     <li><a href="" class="color-offwhite">Premium</a></li>
                     <li><a href="" class="color-offwhite">Support</a></li>
                     <li><a href="" class="color-offwhite">Download</a></li>
@@ -71,7 +79,7 @@
     </header>
 
     <main class="flex panel-gap">
-        <div class="leftbar-wrapper flex">
+        <div class="leftbar-wrapper">
             <div class="leftbar column-flex background-gray">
                 <div class="heading flex align-center space-btw">
                     <h1 style="font-size: 1rem;">
@@ -634,7 +642,7 @@
                     <div class="copyright-sec color-offwhite" style="padding:1rem 0;">
                         &copy; 2025 Spotify AB
                     </div>
-                    
+
                 </div>
             </div>
         </div>

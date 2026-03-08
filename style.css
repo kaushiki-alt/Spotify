@@ -1,11 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     background-color: #000;
     color: white;
     font-family: 'Roboto', sans-serif;
     margin: 10px;
-
 }
 
 a {
@@ -27,7 +36,6 @@ a {
     height: 48px;
     border-radius: 24px;
     border: none;
-
 }
 
 .home-img,
@@ -48,9 +56,8 @@ a {
 .search-box {
     border-radius: 24px;
     height: 48px;
-    padding: 0px 4px
+    padding: 0px 4px;
 }
-
 
 .text {
     justify-content: space-between;
@@ -74,12 +81,26 @@ a {
 }
 
 .options {
+    display: flex;
     gap: 10px;
-
 }
 
 .options-bar {
     padding-left: 18%;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header {
+    margin-top: 0.5rem;
+}
+
+main {
+    margin-top: 1rem;
 }
 
 .side-nav {
@@ -88,24 +109,20 @@ a {
     color: #000;
 }
 
+/*  Layout  */
 
 .leftbar {
     width: 280px;
+    max-width: 450px;
     height: calc(100vh - 100px);
     min-height: 0;
     flex-shrink: 0;
     border-radius: 8px;
-    box-sizing: border-box;
     padding: 0px 8px 8px 8px;
     position: relative;
-    resize: none;
     overflow: hidden;
-    min-width: 280px;
-    max-width: 450px;
-    display: flex;
     flex-direction: column;
 }
-
 
 .leftbar .heading {
     flex-shrink: 0;
@@ -125,10 +142,9 @@ a {
     height: 250px;
     overflow-y: scroll;
     overflow-x: hidden;
-    /* Hide horizontal scrollbar */
 }
 
-/* Custom scrollbar styling */
+/* Custom scrollbar */
 .left-top::-webkit-scrollbar {
     width: 10px;
     border-radius: 0px;
@@ -178,7 +194,6 @@ a {
 
 .box-wrapper .btn {
     width: 100%;
-
 }
 
 .left-bottom {
@@ -205,7 +220,6 @@ a {
 
 .border-top {
     border-top: 1px solid #b3b3b355;
-
 }
 
 .lang-btn {
@@ -218,7 +232,6 @@ a {
     width: fit-content;
     margin-top: 1rem;
 }
-
 
 .resizer {
     width: 2px;
@@ -254,7 +267,8 @@ a {
 
 .rightbar-wrapper {
     flex: 1;
-    min-width: 800px;
+    width: 100%;
+    min-width: 0;
     display: flex;
     border-radius: 8px;
     flex-direction: column;
@@ -262,35 +276,265 @@ a {
     overflow-y: auto;
 }
 
-
 .trendingSongs::-webkit-scrollbar,
 .popularArtists::-webkit-scrollbar,
 .popularAlbums::-webkit-scrollbar,
-.featuredCharts::-webkit-scrollbar
-{
+.featuredCharts::-webkit-scrollbar {
     display: none;
 }
 
+.trendingSongs,
+.popularArtists,
+.popularAlbums,
+.featuredCharts {
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
 
 .trendingSongs.shadow {
     box-shadow: inset 20px 0 17px -18px rgba(0, 0, 0, 0.685);
 }
 
-
-.rightbar-footer{
+.rightbar-footer {
     padding-top: 40px;
 }
 
-.rightbar-footer .footer-divider{
-margin-left: 24px;
-margin-right: 24px;
-margin-block: 24px;
-border: 0px;
-border-block-start: 1px solid #292929;
--webkit-tap-highlight-color: transparent;
+.rightbar-footer .footer-divider {
+    margin-left: 24px;
+    margin-right: 24px;
+    margin-block: 24px;
+    border: 0px;
+    border-block-start: 1px solid #292929;
+    -webkit-tap-highlight-color: transparent;
 }
 
-.lists ul{
+.lists ul {
     padding-inline-start: 0px;
     margin-right: 40px;
+}
+
+#options {
+    display: none;
+}
+
+/* RESPONSIVE BREAKPOINTS */
+
+/*  Large tablets / small desktops (max 1024px) */
+@media (max-width: 1024px) {
+    .leftbar {
+        width: 220px;
+    }
+
+    .text {
+        gap: 6vw;
+    }
+
+    #options {
+        display: block;
+        background-color: #1a1a1a;
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 20px;
+        padding: 8px 36px 8px 16px;
+        font-size: 0.85rem;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 600;
+        cursor: pointer;
+        appearance: none;
+        -webkit-appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+        transition: border-color 0.2s ease, background-color 0.2s ease;
+    }
+
+    #options option {
+        background-color: #121212;
+        color: white;
+        font-weight: 500;
+    }
+
+    .hide-mobile {
+        display: none !important;
+    }
+
+}
+
+/*  Tablets (max 768px)  */
+@media (max-width: 768px) {
+    body {
+        margin: 6px;
+    }
+
+    /* Hide the sidebar */
+    .leftbar {
+        position: fixed;
+        left: -300px;
+        top: 0;
+        height: 100vh;
+        width: 260px;
+        z-index: 100;
+        border-radius: 0;
+        transition: left 0.3s ease;
+        background-color: #121212;
+    }
+
+
+    /* Rightbar takes full width */
+    .rightbar-wrapper {
+        height: calc(100vh - 80px);
+        border-radius: 4px;
+    }
+
+    /* Navbar options */
+    .options-bar {
+        padding-left: 0;
+    }
+
+    .options a {
+        font-size: 0.85rem;
+    }
+
+    .logo {
+        margin: 0px 10px;
+    }
+
+    /* Compact search box */
+    .search-box {
+        height: 40px;
+    }
+
+    .home,
+    .search,
+    .playlist {
+        width: 40px;
+        height: 40px;
+    }
+
+    .home-img,
+    .search-img,
+    .browse-img,
+    .install-img,
+    .createplaylist-img,
+    .globe-img {
+        width: 20px;
+    }
+
+    .text {
+        gap: 4vw;
+    }
+
+    .rightbar-footer {
+        padding-top: 24px;
+    }
+
+    .rightbar-footer .footer-divider {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+    .lists ul {
+        margin-right: 16px;
+    }
+}
+
+/*  Mobile (max 480px) ─ */
+@media (max-width: 480px) {
+    body {
+        margin: 4px;
+    }
+
+    /* Tighten up the navbar */
+    .logo {
+        margin: 0 6px;
+    }
+
+    .options {
+        gap: 6px;
+    }
+
+    .options a {
+        font-size: 0.78rem;
+    }
+
+    /* Hide non-essential nav text labels on very small screens */
+
+    .search-box {
+        height: 36px;
+        padding: 0 2px;
+    }
+
+    .home,
+    .search,
+    .playlist {
+        width: 36px;
+        height: 36px;
+        border-radius: 18px;
+    }
+
+    .home-img,
+    .search-img,
+    .browse-img,
+    .install-img,
+    .createplaylist-img,
+    .globe-img {
+        width: 18px;
+    }
+
+    .rightbar-wrapper {
+        height: calc(100vh - 70px);
+    }
+
+    /* Footer links wrap naturally on small screens */
+    .left-bottom ul {
+        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+        font-size: 0.72rem;
+    }
+
+    .lang-btn {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+
+    .box-wrapper {
+        padding: 12px 14px;
+        gap: 12px;
+    }
+
+    .rightbar-footer {
+        padding-top: 16px;
+    }
+
+    .rightbar-footer .footer-divider {
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-block: 16px;
+    }
+
+    .lists ul {
+        margin-right: 10px;
+    }
+
+    .text {
+        gap: 2vw;
+    }
+}
+
+/*  Very small phones (max 360px) ─ */
+@media (max-width: 360px) {
+    .options a {
+        font-size: 0.72rem;
+    }
+
+    .home,
+    .search,
+    .playlist {
+        width: 32px;
+        height: 32px;
+        border-radius: 16px;
+    }
+
+    .left-bottom ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
